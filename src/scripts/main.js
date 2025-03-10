@@ -17,7 +17,14 @@ document.addEventListener('click', (e) => {
       e.clientY - wallRect.top - wallBorder - spiderSize / 2 + 'px';
   }
 
-  if (spider.style.top < spiderSize) {
+  const spiderHeight = parseInt(spider.style.top, 10);
+  const spiderWidth = parseInt(spider.style.left, 10);
+
+  if (spiderHeight < spiderSize) {
     spider.style.top = 0;
+  }
+
+  if (spiderWidth < spiderSize) {
+    spider.style.left = 0;
   }
 });
